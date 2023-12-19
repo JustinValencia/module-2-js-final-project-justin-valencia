@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-            />
-        <title>Space Invaders</title>
-        <link rel="shortcut icon" href="#" />
-        <link rel="stylesheet" href="styles.css" />
-        <script type="module" src="app.js"></script>
-    </head>
-    <body>
-        <h1>Space Invaders</h1>
-            <canvas id="game"></canvas>
-        
-    </body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Invaders</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.js"></script>
+</head>
+
+<body>
+
+    <h1 class="text-center" id="title">Space Invaders</h1>
+
+    <div class="container">
+        <div id='start-screen' class='screen' style='display:block'>
+            <button class ="button-62" type="button" id="start-button" role="button">Start Game</button>
+            <button class ="button-62" type="button" id="openModal" role="button">How To Play </button>
+            <div class="modal" id="modal">
+                <div class="modal-inner">
+                    <img src ="images/HowToPlay.png" alt="How to Play!">
+                    <button id="closeModal" class = "button-62">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <canvas id="game" style='display:none'></canvas>
+
+
+</body>
+
 </html>

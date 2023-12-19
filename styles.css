@@ -2,13 +2,15 @@
     box-shadow: black 20px 10px 50px;
     width: 600px;
     height: 600px;
+    margin-top: auto;
 }
 
 h1 {
-    margin:0px;
+    margin: 0px;
     margin-bottom: 10px;
     font-size: 2.9em;
     font-family: "Helvetica";
+    color: white;
 }
 
 body {
@@ -18,6 +20,100 @@ body {
     padding: 0px;
     margin: 0px;
     height: 100vh;
-    background: linear-gradient(0deg, rgb(97, 98, 99) 0%, rgba(0, 0, 0, 0) 100%);
+    background-image: linear-gradient(0deg, rgb(88, 30, 197) 0%, rgba(0, 0, 0, 0) 100%);
     background-color: black;
+}
+
+#start-button {
+    margin: 10px;
+}
+
+/*Added modal css thanks to Florin Pop on Youtube*/
+* {
+    box-sizing: border-box;
+}
+
+button:active {
+    opacity: 0.8;
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.open {
+    opacity: 1;
+    z-index: 999;
+}
+
+.modal-inner {
+    background-color: #000000;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 500px;
+    height: 355px;
+}
+
+modal-inner h2 {
+    margin: 0;
+}
+
+.modal-inner p {
+    line-height: 24px;
+    margin: 10px 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* I got this from 92 cool buttons on the internet */
+
+/* CSS */
+.button-62 {
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+}
+
+.button-62:not([disabled]):focus {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
 }
