@@ -5,6 +5,7 @@ import BulletController from "./BulletController.js"
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 const button1 = document.getElementById("start-button");
+// const scoreEl = document.querySelector('#scoreEl');
 
 //added some modal support
 const openBtn = document.getElementById("openModal");
@@ -33,6 +34,17 @@ const player = new Player(canvas, 3, playerBulletController);
 
 let isGameOver = false;
 let didWin = false;
+// let score = 0;
+
+// function scoreUpdate() {
+//     if (enemyController.collisionDetection()) {
+//         score += 100;
+//         console.log(score);
+//         scoreEl.innerHTML = score;
+//     } else {
+
+//     }
+// }
 
 function game() {
     checkGameOver();
@@ -95,6 +107,15 @@ function toggleScreen(id, toggle) {
 function start() {
     toggleScreen('start-screen', false);
     toggleScreen('game', true);
+    showScore();
     //this is equal to 60 fps which is a comfortable speed for our eyes and computer
     setInterval(game, 1000 / 60);
 }
+
+function showScore() {
+    var node = document.getElementById('scoreDisplay')
+    var visibility = node.style.visibility;
+    node.style.visibility = visibility == "visible" ? 'hidden' : "visible"
+}
+
+// scoreUpdate();

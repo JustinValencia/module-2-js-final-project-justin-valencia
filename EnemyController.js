@@ -1,10 +1,13 @@
 import Enemy from "./Enemy.js";
 import MovingDirection from "./MovingDirection.js";
 
+let score = 0;
+const scoreEl = document.querySelector('#scoreEl');
+
 export default class EnemyController {
 
     enemyMap = [
-        [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+        [0, 0, 3, 3, 3, 3, 3, 3, 0, 0],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
@@ -22,6 +25,7 @@ export default class EnemyController {
     moveDownTimer = this.moveDownTimerDefault;
     fireBulletTimerDefault = 100;
     fireBulletTimer = this.fireBulletTimerDefault;
+    
 
 
     constructor(canvas, enemyBulletController, playerBulletController) {
@@ -44,6 +48,13 @@ export default class EnemyController {
         this.fireBullet();
     }
 
+
+    addScore() {
+        score += 100;
+        console.log('Your score is ' + score);
+        scoreEl.innerHTML = score;
+    }
+
     collisionDetection() {
         this.enemyRows.forEach(enemyRow => {
             enemyRow.forEach((enemy, enemyIndex) => {
@@ -52,6 +63,14 @@ export default class EnemyController {
                     //plays the death sound
                     this.enemyDeathSound.play();
                     enemyRow.splice(enemyIndex, 1);
+                    this.addScore()
+                    //call function for ufo. This is implementation I would add with more time. We'll leave it here for now :)
+                    // var d = Math.random();
+                    // if (d < 0.9) {
+                    //     console.log("no ufo");
+                    // } else {
+                    //     console.log("a ufo is spawning!");
+                    // }
                 }
             });
         });
@@ -153,4 +172,6 @@ export default class EnemyController {
     collideWith(sprite) {
         return this.enemyRows.flat().some(enemy => enemy.collideWith(sprite));
     }
+
+
 }

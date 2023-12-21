@@ -3,6 +3,13 @@
     width: 600px;
     height: 600px;
     margin-top: auto;
+    display: none;
+}
+
+#scoreDisplay {
+    font-size: 25px;
+    color:white;
+    visibility: hidden;
 }
 
 h1 {
